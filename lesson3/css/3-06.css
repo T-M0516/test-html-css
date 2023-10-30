@@ -1,0 +1,51 @@
+@charset "utf-8";
+
+section {
+    width: 600px;
+    background: #ffebf0;
+    /* marginとautoを利用した中央揃え */
+    margin: 0 auto;
+    padding: 2em;
+}
+
+h1 {
+    margin: 0 0 1em;
+}
+
+img {
+    width: 320px;
+    margin-left: 1em;
+    margin-bottom: 1em;
+}
+
+p {
+    /* line-heightは親に設定されているフォントサイズの倍率を指定する */
+    line-height: 1.8;
+    background-color: yellow;
+}
+
+img {
+    float: right;
+    opacity: 0.5;
+}
+
+div{
+    /* 回り込みの打ち止め */
+    clear: both;
+}
+
+/* クリアフィックス（セクション向け） */
+section::after{
+    content: "";
+    /*clearはインライン要素にしか効果がない  */
+    /* インライン要素をブロック要素に変換すればclearが適用できる */
+    display: block;
+    clear:both ;
+}
+
+/* classで指定して疑似要素作ることも可能 */
+.clearfix::after{
+    content: "";
+    display: block;
+    clear:both ;
+}
