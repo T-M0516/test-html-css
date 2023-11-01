@@ -1,0 +1,50 @@
+@charset 'utf-8';
+
+/* 全体の設定・事前準備 */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.container {
+    width: 1000px;
+    margin: 20px auto;
+    /* Gridの設定 */
+    display: grid;
+    /* 列の幅と数を指定 */
+    grid-template-columns: 320px 320px 320px;
+    /* 行の高さと数を指定 */
+    grid-template-rows: 240px 240px;
+    /* アイテム同士の間隔（縦も横も） */
+    grid-gap: 20px; /*row-gap column-gapの順*/
+
+    /* レイアウト */
+    /* justify-content: end;
+    align-content: start;
+    align-items: center; */
+
+    /* コンテンツの流れ */
+    grid-auto-flow: row;/*rowが初期値　columnは縦*/
+}
+
+@media screen and (max-width: 999px) {
+    .container {
+        width: 320px;
+        grid-template-columns: 155px 155px;
+        grid-template-rows: 116px 116px 116px;
+        grid-gap: 10px;
+    }
+}
+
