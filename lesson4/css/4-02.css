@@ -1,6 +1,5 @@
 @charset 'utf-8';
 
-/* 全体の設定・事前準備 */
 *,
 *::before,
 *::after {
@@ -21,33 +20,31 @@ img {
 .container {
     /* width: 1000px; */
     width: 100%;
-    max-width: 100%;
-    background: yellow;
+    background: pink;
+    max-width: 1000px;
     margin: 20px auto;
-
-    /* Gridの設定 */
     display: grid;
 
-    /* 列の幅と数を指定 */
+    /* 列 */
     /* grid-template-columns: 320px 320px 320px; */
     grid-template-columns: 1fr 1fr 1fr;
 
-    /* 行の高さと数を指定 */
+    /* 行 */
     /* grid-template-rows: 240px 240px; */
-    grid-template-rows: 1fr 20px 1fr;
-
-    /* アイテム同士の間隔（縦も横も） */
-    grid-gap: 20px;
-    /*row-gap column-gapの順*/
+    grid-template-rows: 1fr 1fr;
 
     /* レイアウト */
-    /* justify-content: end;
+    justify-content: start;
     align-content: start;
-    align-items: center; */
+    align-items: center;
 
     /* コンテンツの流れ */
     grid-auto-flow: row;
-    /*rowが初期値　columnは縦*/
+    /* rowが初期値 columnは縦*/
+
+    /* ギャップ */
+    grid-gap: 20px 10px;
+    /* row-gap column-gapの順 */
 }
 
 @media screen and (max-width: 650px) {
@@ -58,41 +55,43 @@ img {
     }
 }
 
+
 .grid {
     display: grid;
     border: 5px solid #ccc;
     max-width: 1000px;
     margin: 50px auto;
 
-    /* 行  */
-    grid-template-rows: repeat(3, [start] 200px [row2] 200px [row3] 200px [end]);
-    /* repeat (繰り返し回数,サイズ)*/
+    /* 行 */
+    grid-template-rows: repeat(1, [start] 200px [row2] 200px [row3] 200px [end]);
+    /* repeat(繰り返し回数, サイズ) */
 
     /* 列 */
-    grid-template-columns: repeat([start] fr1 [col1] fr1 [col2] fr1 [col3] fr1 [end]);
+    grid-template-columns: [start] 1fr [col2] 1fr [col3] 1fr [end];
 
     /* レイアウト */
-    /* justify-items: start;
-    align-items: center; */
+    /* justify-items: end;
+  align-items: center; */
 }
 
 .yellow {
     background: yellow;
-    grid-column: 1/4;
+    grid-column: 1 / 4;
 }
 
 .red {
     background: red;
-    grid-column: 1/3;
-    grid-row: 2/4;
-    z-index: 1; /*重ね順*/
-    opacity: 0.7;
+    grid-column: 1 / 3;
+    grid-row: 2 / 4;
+    z-index: 1;
+    /* 重ね順 */
+    opacity: .5;
 }
 
 .green {
     background: green;
-    grid-column: col3 /end;
-    grid-row: 2/4;
+    grid-column: col3 / end;
+    grid-row: 2 / 4;
 }
 
 .blue {
@@ -100,4 +99,3 @@ img {
     grid-area: 2 / 2 / 3 / 3;
     /* row-start col-start row-end col-end */
 }
-
