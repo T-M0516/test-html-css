@@ -1,0 +1,41 @@
+@charset 'utf-8';
+
+section {
+    width: 200px;
+    height: 200px;
+    background: skyblue;
+    margin-bottom: 150px;
+}
+
+section img {
+    max-width: 100%;
+}
+
+.relative img {
+    /*相対指定
+     元あった位置の上から60px、左から100pxずらす */
+    position: relative;
+    top: 60px;
+    left: 100px;
+}
+
+.absolute {
+    position: relative;
+}
+
+.absolute img {
+    /* 絶対指定 */
+    position: absolute;
+    right: 0;
+    top: 60px;
+    left: 100px;
+}
+
+.fixed {
+    /* ウィンドウに固定 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: yellow;
+    width: 100%;
+}
