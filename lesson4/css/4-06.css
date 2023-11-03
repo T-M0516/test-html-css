@@ -1,0 +1,26 @@
+@charset 'utf-8';
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* レイアウト */
+footer {
+    width: 100%;
+    background: #7b645d;
+    padding: 60px 0;
+    text-align: center;
+    color: #504543;
+}
+
+.footer-inner {
+    width: 1000px;
+    background: #fff;
+    margin: 0 auto;
+    padding: 60px;
+}
+

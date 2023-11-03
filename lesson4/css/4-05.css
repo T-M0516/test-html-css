@@ -48,7 +48,6 @@ ul.sub-list {
     top: 100%;
     left: 0;
     display: none;
-
 }
 
 ul.sub-list li {
@@ -56,6 +55,25 @@ ul.sub-list li {
 }
 
 /* ホバーされたliの直下にあるul.sub-listを表示(ブロック性質に)する */
-ul.gnav-list li:hover>ul.sub-list {
+ul.gnav-list li:hover > ul.sub-list {
     display: block;
 }
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+/* その他設定 */
+main {
+    margin-top: 60px;
+}
+
+main div {
+    background:#eee;
+    height: 80vh;
+    width: 90%;
+    margin: 0 auto 40px;
+}
+
