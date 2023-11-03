@@ -1,0 +1,61 @@
+@charset 'utf-8';
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ナビゲーションの装飾 */
+header {
+    width: 100vw;
+}
+
+ul {
+    background: #37bd82;
+    text-align: center;
+}
+
+ul li {
+    display: inline-block;
+    /* 下層リスト(.sub-list)のpositionの基準 */
+    position: relative;
+}
+
+ul li a {
+    display: block;
+    padding: 1em;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+/* 疑似要素を使って矢印アイコン作成 */
+ul li a::after {
+    content: url("../img/arrow.png");
+    margin-left: 10px;
+    vertical-align: middle; /*テキストとアイコンを垂直方向中央に揃える*/
+}
+
+ul li a:hover {
+    background: #2c9869;
+}
+
+ul.sub-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+
+}
+
+ul.sub-list li {
+    width: 100%;
+}
+
+/* ホバーされたliの直下にあるul.sub-listを表示(ブロック性質に)する */
+ul.gnav-list li:hover>ul.sub-list {
+    display: block;
+}
