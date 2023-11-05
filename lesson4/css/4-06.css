@@ -20,7 +20,47 @@ footer {
 .footer-inner {
     width: 1000px;
     background: #fff;
-    margin: 0 auto;
+    margin: 0 auto; /*ボックスを中央寄せ*/
     padding: 60px;
 }
 
+/* ロゴと連絡先 */
+img {
+    margin-bottom: 20px;
+}
+
+address {
+    margin-bottom: 20px;
+    font-style: normal; /* 斜体を直す*/
+    font-size: 14px;
+}
+
+/* ナビゲーション*/
+.footer-inner nav {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+/*リストマーカー削除*/
+.footer-inner nav ul {
+    list-style: none;
+}
+
+/*項目を横並びにする*/
+.footer-inner nav ul li {
+    display: inline-block;
+}
+
+a{
+        display: inline-block;
+        padding: 0.5em;
+        text-decoration: none;
+        color: #b48456;
+}
+
+@media screen and (min-width: 960px) {
+    a:hover {
+        text-decoration: underline;
+    }
+}
