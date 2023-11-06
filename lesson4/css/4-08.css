@@ -1,0 +1,65 @@
+@charset 'utf-8';
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 共通設定 */
+div {
+    width: 100%;
+    padding: 1em;
+    background: #c2bebe;
+}
+
+p {
+    width: 200px;
+    height: 200px;
+    background: #ff0;
+    color: #ef476f;
+}
+
+span {
+    font-size: 20px;
+}
+
+/* インライン要素同士（imgタグとspanタグ）を中央揃え */
+.inline img,
+.inline span {
+    vertical-align: middle;
+}
+
+/* flexboxを使った中央寄せ */
+.flex p {
+    display: flex;
+    align-items: center;
+    /*垂直方向(Y軸)に中央寄せ*/
+    justify-content: center;
+    /*水平方向(X軸)に中央寄せ*/
+}
+
+/* positionを使った中央寄せ */
+.position {
+    position: relative;
+    /* 親要素の高さが潰れないように設定 */
+    height: 300px;
+    margin-top: 30px;
+}
+
+/* 親に対し50％50％の位置に配置する */
+.position p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    /* transformを使った方法 */
+    transform: translate(-50%,-50%);
+
+    /* ネガティブマージン */
+    /* margin-left: -100px;
+    margin-top: -100px; */
+
+}

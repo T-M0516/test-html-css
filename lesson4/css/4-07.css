@@ -1,0 +1,23 @@
+@charset 'utf-8';
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 共通設定 */
+div{
+    width: 100%;
+    padding: 1em;
+    background: #eee;
+}
+
+p{
+    width: 200px;
+    height: 200px;
+    background: #00c;
+    color: #fff;
+}
