@@ -1,4 +1,13 @@
 {
   "files.autoSave": "afterDelay",
-  "editor.fontSize": 16
+  "editor.fontSize": 16,
+  "liveSassCompile.settings.formats": [
+    
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": null,
+      "savePathReplacementPairs": null
+    }
+  ]
 }

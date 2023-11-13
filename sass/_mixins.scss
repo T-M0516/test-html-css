@@ -1,0 +1,30 @@
+@charset 'utf-8';
+
+// ミックスイン
+//  @mixin ミックスイン名 {...}
+@mixin common-box {
+    padding: 1em;
+    border: 1px solid #aaa;
+    background-color: #f9f9f9;
+}
+
+@mixin example($width, $heght) {
+    width: $width;
+    height: $heght;
+    margin: 0 auto;
+}
+
+// メディアクエリの記述
+@mixin mediaquery($size) {
+    @if $size ==small {
+        @media screen and (max-width: 767px) {
+            @content;
+        }
+    }
+
+    @if $size ==large {
+        @media screen and (min-width: 768px) {
+            @content;
+        }
+    }
+}
