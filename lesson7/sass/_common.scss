@@ -1,0 +1,162 @@
+@charset 'utf-8';
+
+@use 'mixins' as *;
+
+// 全体のスタイル調整
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+// bodyの初期スタイル調整
+body {
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: 'Open Sans', 'Noto Sans JP', sans-serif;
+    font-weight: 400;
+    color: #333;
+    background-color: #fff;
+}
+
+// 初期スタイル調整
+h1,
+h2,
+h3 {
+    margin-top: 0;
+    line-height: 1.5;
+    letter-spacing: 0.2em; //文字間隔の調整
+    text-align: center;
+}
+
+h3 {
+    color: #85a7cc;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1.5em;
+    text-align: justify;
+}
+
+address {
+    font-style: normal;
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+        color: #000;
+        text-decoration: none;
+    }
+}
+
+ul {
+    margin: 1em 0;
+    padding: 0;
+    list-style: none;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+section {
+    padding: 60px 0;
+}
+
+// h2への指定
+.h2-title {
+    position: relative;
+    text-transform: uppercase;
+    z-index: 100;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 40px;
+        height: 40px;
+        background: #a5d1ff;
+        position: absolute;
+        left: 50%;
+        margin-left: -20px;
+        transform: rotate(45deg);
+        z-index: -100; //マイナス値であればなんでもOK
+    }
+}
+
+// ユーティリティクラス(スタイル)
+.txt-center {
+    text-align: center;
+}
+
+// リード文用テキスト
+.txt-lead {
+    font-weight: 700;
+}
+
+// ボタン共通(ベース)の設定
+.btn {
+    display: block;
+    padding: 20xp 35px;
+    border-radius: 8px;
+    margin: 0 auto;
+    border: none;
+
+    &:hover,
+    &:focus {
+        background: rgba(0, 0, 0, 0.7);
+        cursor: pointer;
+    }
+
+    // Web予約ボタン
+    &-reserve {
+        color: #fff;
+        background: #6699ff;
+    }
+}
+
+// コンテンツを格納するスタイル
+.inner {
+    padding: 0 15px;
+    margin: 0 auto;
+
+    // メディアクエリ呼び出し パターン2
+    @include mq {
+        max-width: 1200px;
+    }
+}
+
+// メディアクエリの呼び出し パターン1
+// @include mq {
+//     .inner {
+//         max-width: 1200px;
+//     }
+// }
+
+// モバイルとPCでの表示に関するスタイル
+.sp-only {
+    display: block;
+}
+
+.pc-only {
+    display: none;
+}
+
+// PC用のスタイル
+@include mq {
+    .sp-only {
+        display: none;
+    }
+    
+    .pc-only {
+        display: block;
+    }
+}
+

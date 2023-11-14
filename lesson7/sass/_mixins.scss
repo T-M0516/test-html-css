@@ -1,0 +1,11 @@
+@charset 'utf-8';
+
+
+@mixin mq {
+
+    // PC用スタイル
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+
